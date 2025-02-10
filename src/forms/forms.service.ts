@@ -36,7 +36,7 @@ export class FormsService {
       throw new NotFoundException(`Form with id ${formId} not found`);
     }
 
-    Object.assign(form, updateFormDto); // Merge update data into existing form entity
+    Object.assign(form, updateFormDto); 
     return this.formRepository.save(form);
   }
 

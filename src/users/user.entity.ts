@@ -12,5 +12,5 @@ export class User {
   password: string;
 
   @Column({ nullable: true })
-  token: string; // Field to store the JWT token
+  token: string;
 }

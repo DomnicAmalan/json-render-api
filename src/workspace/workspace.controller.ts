@@ -1,7 +1,6 @@
-// src/workspaces/workspaces.controller.ts
+
 import { Controller, Post, Body, Get, UseGuards } from "@nestjs/common";
 import { WorkspacesService } from "./workspace.service";
-import { AuthGuard } from "@nestjs/passport";
 import { JwtAuthGuard } from "src/auth/guards/jwt.guard";
 
 

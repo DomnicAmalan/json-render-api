@@ -8,14 +8,14 @@ import { UsersService } from '../../users/users.service';
 export class JwtStrategy extends PassportStrategy(Strategy) {
   constructor(private usersService: UsersService) {
     super({
-      jwtFromRequest: ExtractJwt.fromAuthHeaderAsBearerToken(), // Extract token from Authorization header
-      ignoreExpiration: false, // Token expiration check
-      secretOrKey: process.env.JWT_SECRET, // Secret key for verifying the JWT
+      jwtFromRequest: ExtractJwt.fromAuthHeaderAsBearerToken(), 
+      ignoreExpiration: false, 
+      secretOrKey: process.env.JWT_SECRET, 
     });
   }
 
   async validate(payload: any) {
-    const user = await this.usersService.findOneById(payload.sub); // Fetch user by ID
+    const user = await this.usersService.findOneById(payload.sub); 
     if (user) {
       return user;
     }

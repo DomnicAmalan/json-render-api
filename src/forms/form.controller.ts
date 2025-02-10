@@ -39,7 +39,7 @@ export class FormsController {
     return this.formsService.updateForm(workspaceId, formId, updateFormDto);
   }
 
-  // Delete a form by its ID
+  
   @UseGuards(JwtAuthGuard)
   @Delete(':workspaceId/form/:formId')
   async deleteFormById(

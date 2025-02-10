@@ -45,7 +45,7 @@ describe('AuthService', () => {
     });
 
     it('should return null if credentials are invalid', async () => {
-      jest.spyOn(bcrypt, 'compare').mockResolvedValue(false as never); // Explicitly type the return value
+      jest.spyOn(bcrypt, 'compare').mockResolvedValue(false as never); 
 
       const result = await authService.signIn('test@example.com', 'wrongPassword');
       expect(result).toBeNull();
